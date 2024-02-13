@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A4DDAF42B7B6A6E00844F0C /* OnboardingScreen02.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4DDAF32B7B6A6E00844F0C /* OnboardingScreen02.swift */; };
 		68375B692B7B53FD00F19D9C /* WaterTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68375B682B7B53FD00F19D9C /* WaterTrackerApp.swift */; };
 		68375B6B2B7B53FD00F19D9C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68375B6A2B7B53FD00F19D9C /* ContentView.swift */; };
 		68375B6D2B7B53FF00F19D9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68375B6C2B7B53FF00F19D9C /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A4DDAF32B7B6A6E00844F0C /* OnboardingScreen02.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreen02.swift; sourceTree = "<group>"; };
 		68375B652B7B53FD00F19D9C /* WaterTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68375B682B7B53FD00F19D9C /* WaterTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterTrackerApp.swift; sourceTree = "<group>"; };
 		68375B6A2B7B53FD00F19D9C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,6 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				68375B682B7B53FD00F19D9C /* WaterTrackerApp.swift */,
+				5A4DDAF32B7B6A6E00844F0C /* OnboardingScreen02.swift */,
 				68375B6A2B7B53FD00F19D9C /* ContentView.swift */,
 				68375B6C2B7B53FF00F19D9C /* Assets.xcassets */,
 				68375B6E2B7B53FF00F19D9C /* Preview Content */,
@@ -139,6 +142,7 @@
 			files = (
 				68375B6B2B7B53FD00F19D9C /* ContentView.swift in Sources */,
 				68375B692B7B53FD00F19D9C /* WaterTrackerApp.swift in Sources */,
+				5A4DDAF42B7B6A6E00844F0C /* OnboardingScreen02.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

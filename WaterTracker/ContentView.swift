@@ -1,72 +1,86 @@
-//
-//  ContentView.swift
-//  WaterTracker
-//
-//  Created by Aisha Alnozili on 03/08/1445 AH.
-//
+
+
 import SwiftUI
 
 struct ContentView: View {
+    @AppStorage("isOnboardingCompleted") private var isOnboardingCompleted: Bool = false
     @State private var userInput: String = ""
+    @State private var showResults = false
+    @State private var litersOfWaterNeeded: Double = 0
+    @State private var cupsOfWaterNeeded: Int = 0
 
     var body: some View {
         NavigationView {
             VStack(alignment: .leading, spacing: 8) {
-                Image("drop")
+                Image(systemName: "drop.fill")
                     .resizable()
+                    .foregroundColor(Color("lightBlue"))
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 80, height: 80)
-                    .padding(.bottom, 5)
-                
+                    .frame(width: 50, height: 70)
+                    .padding(.leading)
+                    .offset(y: 30)
+
                 Text("iHydrate")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .padding(.leading)
-                
+                    .offset(y: 30)
+
                 Text("Start with iHydrate to record and track your water intake daily based on your needs and stay hydrated")
-                    .foregroundColor(.gray)
-                
+                    .foregroundColor(Color("grey2"))
+                    .offset(y: 30)
+                    .padding(.leading)
+
                 VStack(alignment: .leading, spacing: 2) {
                     ZStack(alignment: .leading) {
                         HStack {
-                            Text("Body weight")
-                                .foregroundColor(.black)
-                            Text("weight")
-                                .foregroundColor(.gray)
-                                .opacity(userInput.isEmpty ? 1.0 : 0.5)
-                            Text("Kg")
-                                .foregroundColor(.black)
-                        }
-                        TextField("", text: $userInput, onEditingChanged: { _ in }) {
+                            TextField("weight", text: $userInput)
+                                .keyboardType(.decimalPad)
+                                .padding(.leading, 110)
+                                .foregroundColor(userInput.isEmpty ? .gray : Color("grey1"))
                             
+                            Text("Kg")
+                                .foregroundColor(.primary)
+                                .padding(.trailing, 130)
                         }
-                        .foregroundColor(.gray)
-                        .padding(.leading, 8)
-                        .opacity(userInput.isEmpty ? 0.5 : 1.0)
+                        Text("Body weight")
+                            .foregroundColor(.primary)
+                            .padding(.trailing, 8)
                     }
-                    .padding()
-                    .background(Color.gray.opacity(0.1))
-                    .cornerRadius(8)
-                    .padding(.bottom, 8)
-                    
-                    Spacer()
-                    
-                    Button(action: {
-                        print("tap")
-                    }) {
-                        Text("Calculate Now  ")
-                            .foregroundColor(.white)
-                            .frame(maxWidth: .infinity)
-                            .padding()
-                            .background(userInput.isEmpty ? Color.gray.opacity(0.5) : Color.lightBlue)
-                            .cornerRadius(10)
-                    }
-                    .disabled(userInput.isEmpty)
-                    .padding(.leading)
-                    .padding(.trailing)
+                    .padding(.leading, 8)
                 }
+                .padding()
+                .background(Color("grey1"))
+                .cornerRadius(8)
+                .padding(.bottom, 8)
+                .offset(y: 70)
+
+                Spacer()
+
+                Button(action: calculateWaterIntake) {
+                    Text("Calculate Now")
+                        .foregroundColor(Color("grey1"))
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(userInput.isEmpty ? Color("ColorButton").opacity(0.5) : Color("lightBlue"))
+                        .cornerRadius(10)
+                }
+                .disabled(userInput.isEmpty)
+                .padding(.leading)
+                .padding(.trailing)
+                .offset(y: -60)
+
+                NavigationLink("", destination: OnboardingScreen02(litersOfWaterNeeded: litersOfWaterNeeded, cupsOfWaterNeeded: cupsOfWaterNeeded), isActive: $showResults).hidden()
             }
             .padding()
+        }
+    }
+
+    func calculateWaterIntake() {
+        if let userWeight = Double(userInput) {
+            litersOfWaterNeeded = userWeight * 0.03
+            cupsOfWaterNeeded = Int(litersOfWaterNeeded * 33.814 / 8)
+            showResults = true
         }
     }
 }

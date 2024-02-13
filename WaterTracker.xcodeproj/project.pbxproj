@@ -8,21 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		5A4DDAF42B7B6A6E00844F0C /* OnboardingScreen02.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4DDAF32B7B6A6E00844F0C /* OnboardingScreen02.swift */; };
+		5AE583102B7BA001002E8B1A /* WaterMetricView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE5830F2B7BA001002E8B1A /* WaterMetricView.swift */; };
+		5AE583142B7BA80D002E8B1A /* Notification Preferences .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE583132B7BA80D002E8B1A /* Notification Preferences .swift */; };
 		68375B692B7B53FD00F19D9C /* WaterTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68375B682B7B53FD00F19D9C /* WaterTrackerApp.swift */; };
 		68375B6B2B7B53FD00F19D9C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68375B6A2B7B53FD00F19D9C /* ContentView.swift */; };
 		68375B6D2B7B53FF00F19D9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68375B6C2B7B53FF00F19D9C /* Assets.xcassets */; };
 		68375B702B7B53FF00F19D9C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68375B6F2B7B53FF00F19D9C /* Preview Assets.xcassets */; };
-		68375B772B7B72FF00F19D9C /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68375B762B7B72FF00F19D9C /* Test.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5A4DDAF32B7B6A6E00844F0C /* OnboardingScreen02.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreen02.swift; sourceTree = "<group>"; };
+		5AE5830F2B7BA001002E8B1A /* WaterMetricView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterMetricView.swift; sourceTree = "<group>"; };
+		5AE583132B7BA80D002E8B1A /* Notification Preferences .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification Preferences .swift"; sourceTree = "<group>"; };
 		68375B652B7B53FD00F19D9C /* WaterTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68375B682B7B53FD00F19D9C /* WaterTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterTrackerApp.swift; sourceTree = "<group>"; };
 		68375B6A2B7B53FD00F19D9C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		68375B6C2B7B53FF00F19D9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		68375B6F2B7B53FF00F19D9C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		68375B762B7B72FF00F19D9C /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +41,7 @@
 		68375B5C2B7B53FD00F19D9C = {
 			isa = PBXGroup;
 			children = (
+				5AE5830F2B7BA001002E8B1A /* WaterMetricView.swift */,
 				68375B672B7B53FD00F19D9C /* WaterTracker */,
 				68375B662B7B53FD00F19D9C /* Products */,
 			);
@@ -56,9 +59,9 @@
 			isa = PBXGroup;
 			children = (
 				68375B682B7B53FD00F19D9C /* WaterTrackerApp.swift */,
-				5A4DDAF32B7B6A6E00844F0C /* OnboardingScreen02.swift */,
 				68375B6A2B7B53FD00F19D9C /* ContentView.swift */,
-				68375B762B7B72FF00F19D9C /* Test.swift */,
+				5A4DDAF32B7B6A6E00844F0C /* OnboardingScreen02.swift */,
+				5AE583132B7BA80D002E8B1A /* Notification Preferences .swift */,
 				68375B6C2B7B53FF00F19D9C /* Assets.xcassets */,
 				68375B6E2B7B53FF00F19D9C /* Preview Content */,
 			);
@@ -144,9 +147,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				68375B6B2B7B53FD00F19D9C /* ContentView.swift in Sources */,
-				68375B772B7B72FF00F19D9C /* Test.swift in Sources */,
 				68375B692B7B53FD00F19D9C /* WaterTrackerApp.swift in Sources */,
+				5AE583142B7BA80D002E8B1A /* Notification Preferences .swift in Sources */,
 				5A4DDAF42B7B6A6E00844F0C /* OnboardingScreen02.swift in Sources */,
+				5AE583102B7BA001002E8B1A /* WaterMetricView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +284,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WaterTracker/Preview Content\"";
+				DEVELOPMENT_TEAM = 25ANLCX5P6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -308,6 +313,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WaterTracker/Preview Content\"";
+				DEVELOPMENT_TEAM = 25ANLCX5P6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

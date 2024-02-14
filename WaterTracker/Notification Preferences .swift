@@ -2,39 +2,88 @@ import SwiftUI
 
 struct Notification_Preferences_: View {
     @State private var startHour = Date()
-    @State private var endHour = Date()
-    @State private var selectedInterval: TimeInterval? 
-
-    let intervals: [(time: TimeInterval, unit: String)] = [
-        (15 * 60, "Mins"), (30 * 60, "Mins"),
-        (60 * 60, "Mins"), (90 * 60, "Mins"),
-        (2 * 3600, "Hours"), (3 * 3600, "Hours"),
-        (4 * 3600, "Hours"), (5 * 3600, "Hours")
-    ]
+        @State private var endHour = Date()
+        @State private var selectedInterval: String?
+        let intervals = [("15", "Mins"), ("30", "Mins"),
+                         ("60", "Mins"), ("90", "Mins"),
+                         ("2", "Hours"), ("3", "Hours"),
+                         ("4", "Hours"), ("5", "Hours")]
+    let columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 10), count: 4)
 
     var body: some View {
         VStack {
             Text("Notification Preferences")
-                .font(.system(size: 30))
+                .font(.system(size: 25))
                 .fontWeight(.bold)
-                .padding(.bottom, 50)
+                .padding(.bottom,40)
+                .frame(maxWidth: .infinity, alignment: .leading)
 
             Text("The start and End hour")
                 .font(.system(size: 18))
                 .fontWeight(.bold)
                 .padding(.bottom, 5)
+                .frame(maxWidth: .infinity, alignment: .leading)
             Text("Specify the start and end date to receive the notifications")
-                .font(.system(size: 16))
+                .font(.system(size: 12))
                 .padding(.bottom, 20)
+                .foregroundColor(Color("grey2"))
+                .frame(maxWidth: .infinity, alignment: .leading)
+
             VStack {
                 DatePicker("Start hour", selection: $startHour, displayedComponents: .hourAndMinute)
+                Divider()
                 DatePicker("End hour", selection: $endHour, displayedComponents: .hourAndMinute)
             }
             .padding()
+            
             .background(Color("grey1") )
             
             .cornerRadius(10)
-            .padding([.leading, .trailing])
+            .frame(maxWidth: .infinity, alignment: .leading)
+
+            
+            Text("Notification interval ")
+                .font(.system(size: 18))
+                .fontWeight(.bold)
+                .padding(.top, 20)
+                .padding(.bottom, 4)
+
+                .frame(maxWidth: .infinity, alignment: .leading)
+
+            Text("How often would you like to receive notifications within the specified time interval")
+                .font(.system(size: 12))
+                .padding(.bottom, 23)
+                .foregroundColor(Color("grey2"))
+                .frame(maxWidth: .infinity, alignment: .leading)
+            
+            LazyVGrid(columns: columns, spacing: 10) {
+                ForEach(intervals, id: \.0) { interval in
+                    Button(action: {
+                        self.selectedInterval = interval.0
+                    }) {
+                        VStack {
+                            Text(interval.0)
+                                .font(.system(size: 20))
+                                .foregroundColor(self.selectedInterval == interval.0 ? .white : Color("lightBlue"))
+                                .fontWeight(.bold)
+
+                            Text(interval.1)
+                                .foregroundColor(self.selectedInterval == interval.0 ? .white : .black)
+                                .font(.system(size: 13))
+                        }
+                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 80)
+                        .background(self.selectedInterval == interval.0 ? Color("lightBlue") : Color("grey1"))
+                        .cornerRadius(10)
+                    }
+                }
+            }
+            .padding(.horizontal)
+
+            
+            
+                  
+            
+             .padding(.bottom, 4)
 
             Button(action: {
             }) {
@@ -45,6 +94,8 @@ struct Notification_Preferences_: View {
                     .background(Color("lightBlue"))
                     .cornerRadius(10)
             }
+            .padding(.top, 20)
+
             .padding([.leading, .trailing])
         }
         .padding()

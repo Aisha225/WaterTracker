@@ -39,11 +39,7 @@ struct ProgressTrack: View {
                 .offset(y: 60)
                 .padding(.leading)
             
-            Text(" Today's Water Intake")
-                .padding(.trailing, 180)
-                .foregroundColor(Color("grey2"))
-                .offset(y: 60)
-                .padding(.leading)
+            
             
             Spacer()
             

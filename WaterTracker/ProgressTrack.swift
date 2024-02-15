@@ -44,7 +44,7 @@ struct ProgressTrack: View {
                     .font(.system(size: 40))
                     .foregroundColor(Color.blue)
                     .offset(y: -160)
-                    .rotationEffect(Angle(degrees: Double(progress * 360 - 180)))
+                    .rotationEffect(Angle(degrees: Double(progress * 360 - 3)))
                 
             }
             .padding(40)
@@ -65,32 +65,47 @@ struct ProgressTrack: View {
                         
                     }
                 }) {
-                    Image(systemName: "minus.circle.fill")
-                        .font(.system(size: 40))
-                        .foregroundColor(Color.grey3)
-                        .background(Circle().fill(Color.lightBlue))
-                        .frame(width: 200, height: 90)
-                        .overlay(Circle().stroke(Color.lightBlue, lineWidth: 0))
-                }
-                
-                Button(action: {
-                    withAnimation {
-                        progress += 0.1
-                        if progress > 1.0 {
-                            progress = 1.0
+                    
+                    HStack(spacing:80){
+                        
+                        ZStack {
+                            Circle()
+                                .fill(Color.grey3)
+                                .frame(width: 50, height: 50)
+                                .overlay(Circle().stroke(Color.grey3, lineWidth: 0))
+                            
+                            Image(systemName: "minus")
+                                .font(.system(size: 35))
+                                .foregroundColor(.lightBlue)
                         }
-                        else{
-                                currentEmojiIndex = Int(progress * CGFloat(emojis.count))
-                                    }
                     }
-                }) {
-                    Image(systemName: "plus.circle.fill")
-                        .font(.system(size: 40))
-                        .foregroundColor(Color.grey3)
-                        .background(Circle().fill(Color.lightBlue))
-                        .frame(width: 200, height: 90)
-                        .overlay(Circle().stroke(Color.lightBlue, lineWidth: 0))
+                    
+                    Button(action: {
+                        withAnimation {
+                            progress += 0.1
+                            if progress > 1.0 {
+                                progress = 1.0
+                            }
+                            else{
+                                currentEmojiIndex = Int(progress * CGFloat(emojis.count))
+                            }
+                        }
+                    }) {
+                        ZStack{
+                            Circle()
+                                .fill(Color.grey3)
+                                .frame(width: 50, height: 50)
+                                .overlay(Circle().stroke(Color.grey3, lineWidth: 0))
+                            
+                            Image(systemName: "plus")
+                                .font(.system(size: 35))
+                                .foregroundColor(.lightBlue)
+                        }
+                        //.padding(.leading)
+                    }
+                    
                 }
+//                Spacer()
             }
             .padding()
         }

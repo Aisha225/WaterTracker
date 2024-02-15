@@ -39,6 +39,12 @@ struct ProgressTrack: View {
                 .offset(y: 60)
                 .padding(.leading)
             
+            Text(" Today's Water Intake")
+                .padding(.trailing, 180)
+                .foregroundColor(Color("grey2"))
+                .offset(y: 60)
+                .padding(.leading)
+            
             Spacer()
             
             ZStack {
@@ -64,7 +70,7 @@ struct ProgressTrack: View {
             
             Spacer()
             
-            HStack(spacing: 130) {
+            HStack(spacing: 90) {
                 Button(action: {
                     withAnimation {
                         updateProgress(increment: false)
@@ -82,6 +88,14 @@ struct ProgressTrack: View {
                     }
                 }
                 
+                
+                
+                
+                Text(" 2.0")
+                
+                    .font(.title)
+                    .bold()
+
                 Button(action: {
                     withAnimation {
                         updateProgress(increment: true)
@@ -100,6 +114,7 @@ struct ProgressTrack: View {
                 }
             }
             .padding()
+            .offset(y : -75)
         }
     }
 }

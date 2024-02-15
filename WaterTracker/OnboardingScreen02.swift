@@ -3,6 +3,9 @@ import SwiftUI
 struct OnboardingScreen02: View {
     var litersOfWaterNeeded: Double
     var cupsOfWaterNeeded: Int
+    @EnvironmentObject var user: User
+
+    @State private var navigateToNotificationPrefs = false // 1. State variable to control navigation
 
     var body: some View {
         NavigationView {
@@ -29,16 +32,24 @@ struct OnboardingScreen02: View {
                 WaterMetricView(metricValue: String(format: "%.1f", litersOfWaterNeeded), metricUnit: "L", imageName: "waterbottle")
             }
             Spacer()
-            Button(action: {
-                
-            }) {
-                Text("Set the notification")
-                    .foregroundColor(.white)
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(Color("lightBlue"))
-                    .cornerRadius(10)
-            }
+            NavigationLink(
+                            destination: Notification_Preferences_(),
+                            isActive: $navigateToNotificationPrefs,
+                            label: {
+                                EmptyView() // This is just a placeholder; NavigationLink is activated programmatically
+                            })
+                            .hidden()
+
+                        Button(action: {
+                            navigateToNotificationPrefs = true
+                        }) {
+                            Text("Set the notification")
+                                .foregroundColor(.white)
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .background(Color("lightBlue"))
+                                .cornerRadius(10)
+                        }
             .padding([.leading, .trailing])
             
             Spacer()

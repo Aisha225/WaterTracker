@@ -18,6 +18,7 @@
 		5AE583972B7CBE70002E8B1A /* WataerTrackerWatch_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE583962B7CBE70002E8B1A /* WataerTrackerWatch_Watch_AppUITests.swift */; };
 		5AE583992B7CBE70002E8B1A /* WataerTrackerWatch_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE583982B7CBE70002E8B1A /* WataerTrackerWatch_Watch_AppUITestsLaunchTests.swift */; };
 		5AE5839C2B7CBE70002E8B1A /* WataerTrackerWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5AE583792B7CBE6F002E8B1A /* WataerTrackerWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5AECCF3E2B7E549200A87C23 /* UserFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AECCF3D2B7E549200A87C23 /* UserFile.swift */; };
 		68375B692B7B53FD00F19D9C /* WaterTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68375B682B7B53FD00F19D9C /* WaterTrackerApp.swift */; };
 		68375B6B2B7B53FD00F19D9C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68375B6A2B7B53FD00F19D9C /* ContentView.swift */; };
 		68375B6D2B7B53FF00F19D9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68375B6C2B7B53FF00F19D9C /* Assets.xcassets */; };
@@ -78,6 +79,7 @@
 		5AE583922B7CBE70002E8B1A /* WataerTrackerWatch Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WataerTrackerWatch Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AE583962B7CBE70002E8B1A /* WataerTrackerWatch_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WataerTrackerWatch_Watch_AppUITests.swift; sourceTree = "<group>"; };
 		5AE583982B7CBE70002E8B1A /* WataerTrackerWatch_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WataerTrackerWatch_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5AECCF3D2B7E549200A87C23 /* UserFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFile.swift; sourceTree = "<group>"; };
 		68375B652B7B53FD00F19D9C /* WaterTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68375B682B7B53FD00F19D9C /* WaterTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterTrackerApp.swift; sourceTree = "<group>"; };
 		68375B6A2B7B53FD00F19D9C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 		68375B5C2B7B53FD00F19D9C = {
 			isa = PBXGroup;
 			children = (
+				5AECCF3D2B7E549200A87C23 /* UserFile.swift */,
 				5AE5830F2B7BA001002E8B1A /* WaterMetricView.swift */,
 				68375B672B7B53FD00F19D9C /* WaterTracker */,
 				5AE5837A2B7CBE6F002E8B1A /* WataerTrackerWatch Watch App */,
@@ -389,6 +392,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AECCF3E2B7E549200A87C23 /* UserFile.swift in Sources */,
 				68375B6B2B7B53FD00F19D9C /* ContentView.swift in Sources */,
 				68375B692B7B53FD00F19D9C /* WaterTrackerApp.swift in Sources */,
 				686058302B7CF9C20096E029 /* ProgressTrack.swift in Sources */,

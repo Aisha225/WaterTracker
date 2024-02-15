@@ -1,45 +1,50 @@
-//
-//  ProgressTrack.swift
-//  WaterTracker
-//
-//  Created by Aisha Alnozili on 04/08/1445 AH.
-//
-
 import SwiftUI
 
 struct ProgressTrack: View {
-    @State private var progress: CGFloat = 0.0
-    @State private var emojis = ["😴", "😃", "😁", "🥰", "🥳"]
-    @State private var currentEmojiIndex: Int = 0
-    @State private var pressCount: Int = 0
+    @ObservedObject var user: User
     
-    func updateProgress(increment: Bool) {
-        let incrementAmount: CGFloat = 0.1
-        if increment {
-            progress += incrementAmount
-        } else {
-            if pressCount < 5 {
-                progress -= incrementAmount
-                pressCount += 1
-            }
-        }
-        if progress > 1.0 {
-            progress = 1.0
-        } else if progress < 0.0 {
-            progress = 0.0
-        }
-        currentEmojiIndex = min(Int(progress * CGFloat(emojis.count)), emojis.count - 1)
+    private var progress: CGFloat {
+        max(CGFloat(user.currentWaterIntake / user.dailyWaterIntakeGoal), 0)
     }
     
+    private var currentEmoji: String {
+        if progress >= 1.0 {
+            return "🥳"
+        } else {
+            let emojis = ["😴", "😃", "😁", "🥰"]
+            let progressPercentage = Int(progress * CGFloat(emojis.count))
+            return emojis[min(progressPercentage, emojis.count - 1)]
+        }
+    }
+    
+    func updateWaterIntake(increment: Bool) {
+        withAnimation {
+            let incrementAmount: Double = user.dailyWaterIntakeGoal * 0.1
+            if increment {
+                user.addWaterIntake(amount: incrementAmount)
+            } else if user.currentWaterIntake > 0 {
+                user.addWaterIntake(amount: -incrementAmount)
+            }
+        }
+    }
+
     var body: some View {
         VStack {
-            Text(" Today's Water Intake")
-                .padding(.trailing, 180)
-                .foregroundColor(Color("grey2"))
-                .offset(y: 60)
-                .padding(.leading)
             
             
+            Text("Today's Water Intake")
+//                          .padding(.trailing, 180)
+                          .foregroundColor(Color("grey2"))
+                          .offset(x: -90, y: 60)
+                          .padding(.leading)
+                      Text("\(String(format: "%.1f", user.currentWaterIntake)) liter / \(String(format: "%.1f", user.dailyWaterIntakeGoal)) liter")
+                .font(.title)
+                .bold()
+            
+
+                .foregroundColor(.black)
+                .offset(x: -70, y: 65)
+                          .padding(.leading)
             
             Spacer()
             
@@ -50,16 +55,16 @@ struct ProgressTrack: View {
                     .foregroundColor(Color.lightBlue2)
                 
                 Circle()
-                    .trim(from: 0.0, to: progress)
+                    .trim(from: 0.0, to: min(progress, 1.0))
                     .stroke(style: StrokeStyle(lineWidth: 50.0, lineCap: .round, lineJoin: .round))
                     .foregroundColor(Color.lightBlue)
                     .rotationEffect(Angle(degrees: -90))
                 
-                Text(emojis[currentEmojiIndex])
-                    .font(.system(size: 40))
+                Text(currentEmoji)
+                    .font(.system(size: progress >= 1.0 ? 60 : 40))
                     .foregroundColor(Color.lightBlue2)
-                    .offset(y: -160)
-                    .rotationEffect(Angle(degrees: Double(progress * 360)))
+                    .offset(y: progress >= 1.0 ? 0 : -160) // عند اكتمال الهدف، يظهر الإيموجي في المنتصف
+                    .rotationEffect(Angle(degrees: progress < 1.0 ? Double(progress * 360) : 0))
                     
             }
             .padding(40)
@@ -69,32 +74,28 @@ struct ProgressTrack: View {
             HStack(spacing: 90) {
                 Button(action: {
                     withAnimation {
-                        updateProgress(increment: false)
+                        updateWaterIntake(increment: false)
                     }
                 }) {
                     ZStack {
                         Circle()
-                            .fill(Color.grey3)
+                            .fill(user.currentWaterIntake > 0 ? Color.grey3 : Color("grey1")) // تغيير لون الزر عندما تكون القيمة صفر
                             .frame(width: 50, height: 50)
                             .overlay(Circle().stroke(Color.grey3, lineWidth: 0))
                         
                         Image(systemName: "minus")
                             .font(.system(size: 35))
-                            .foregroundColor(.lightBlue)
+                            .foregroundColor(user.currentWaterIntake > 0 ? Color.lightBlue : Color("grey2"))
                     }
-                }
+                }.disabled(user.currentWaterIntake <= 0 && user.currentWaterIntake == 0) // تعطيل الزر عندما تكون القيمة صفر
                 
-                
-                
-                
-                Text(" 2.0")
-                
+                Text("\(String(format: "%.1f", user.currentWaterIntake))")
                     .font(.title)
                     .bold()
-
+                
                 Button(action: {
                     withAnimation {
-                        updateProgress(increment: true)
+                        updateWaterIntake(increment: true)
                     }
                 }) {
                     ZStack{
@@ -110,13 +111,23 @@ struct ProgressTrack: View {
                 }
             }
             .padding()
-            .offset(y : -75)
+            .offset(y: -75)
+            
         }
     }
 }
 
 struct ProgressTrack_Previews: PreviewProvider {
     static var previews: some View {
-        ProgressTrack()
+        let userSample = User(weight: 80)
+        ProgressTrack(user: userSample)
     }
 }
+
+
+
+
+
+
+
+

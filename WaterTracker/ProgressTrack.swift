@@ -66,7 +66,7 @@ struct ProgressTrack: View {
                     }
                 }) {
                     
-                    HStack(spacing:80){
+                    HStack(spacing:180){
                         
                         ZStack {
                             Circle()
@@ -78,7 +78,7 @@ struct ProgressTrack: View {
                                 .font(.system(size: 35))
                                 .foregroundColor(.lightBlue)
                         }
-                    }
+                    
                     
                     Button(action: {
                         withAnimation {
@@ -105,7 +105,7 @@ struct ProgressTrack: View {
                     }
                     
                 }
-//                Spacer()
+       }
             }
             .padding()
         }

@@ -25,6 +25,7 @@
 		68375B702B7B53FF00F19D9C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68375B6F2B7B53FF00F19D9C /* Preview Assets.xcassets */; };
 		686058302B7CF9C20096E029 /* ProgressTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6860582F2B7CF9C20096E029 /* ProgressTrack.swift */; };
 		68FDE8052B7E13B30016A2B2 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FDE8042B7E13B30016A2B2 /* Track.swift */; };
+		68FDE8072B8112980016A2B2 /* Drops.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FDE8062B8112980016A2B2 /* Drops.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		68375B6F2B7B53FF00F19D9C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6860582F2B7CF9C20096E029 /* ProgressTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTrack.swift; sourceTree = "<group>"; };
 		68FDE8042B7E13B30016A2B2 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		68FDE8062B8112980016A2B2 /* Drops.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drops.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 				68375B6A2B7B53FD00F19D9C /* ContentView.swift */,
 				68FDE8042B7E13B30016A2B2 /* Track.swift */,
 				6860582F2B7CF9C20096E029 /* ProgressTrack.swift */,
+				68FDE8062B8112980016A2B2 /* Drops.swift */,
 				5A4DDAF32B7B6A6E00844F0C /* OnboardingScreen02.swift */,
 				5AE583132B7BA80D002E8B1A /* Notification Preferences .swift */,
 				68375B6C2B7B53FF00F19D9C /* Assets.xcassets */,
@@ -394,6 +397,7 @@
 			files = (
 				5AECCF3E2B7E549200A87C23 /* UserFile.swift in Sources */,
 				68375B6B2B7B53FD00F19D9C /* ContentView.swift in Sources */,
+				68FDE8072B8112980016A2B2 /* Drops.swift in Sources */,
 				68375B692B7B53FD00F19D9C /* WaterTrackerApp.swift in Sources */,
 				686058302B7CF9C20096E029 /* ProgressTrack.swift in Sources */,
 				5AE583142B7BA80D002E8B1A /* Notification Preferences .swift in Sources */,
@@ -432,7 +436,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WataerTrackerWatch Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = 25ANLCX5P6;
+				DEVELOPMENT_TEAM = P7HKGGW6KP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = WataerTrackerWatch;
@@ -462,7 +466,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WataerTrackerWatch Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = 25ANLCX5P6;
+				DEVELOPMENT_TEAM = P7HKGGW6KP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = WataerTrackerWatch;

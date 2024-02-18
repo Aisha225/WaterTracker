@@ -121,6 +121,8 @@ struct ProgressTrack: View {
                 .offset(y: -75)
                 
             }
+            .navigationBarBackButtonHidden(true)
+
     }
 }
 

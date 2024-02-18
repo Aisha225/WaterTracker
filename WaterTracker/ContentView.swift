@@ -38,7 +38,7 @@ struct ContentView: View {
                             TextField("weight", text: $userInput)
                                 .keyboardType(.decimalPad)
                                 .padding(.leading, 110)
-                                .foregroundColor(userInput.isEmpty ? .gray : Color("grey1"))
+                                .foregroundColor(userInput.isEmpty ? .gray : Color("Black1"))
                             
                             Text("Kg")
                                 .foregroundColor(.primary)
@@ -83,9 +83,7 @@ struct ContentView: View {
             litersOfWaterNeeded = userWeight * 0.03
             cupsOfWaterNeeded = Int(litersOfWaterNeeded * 33.814 / 8)
             showResults = true
-            // هنا يجب تحديث كائن User بالقيم الجديدة
             user.dailyWaterIntakeGoal = litersOfWaterNeeded
-            // لا يوجد تحديث لـ user.currentWaterIntake بناءً على الإدخال في هذه الواجهة
         }
     }
 }

@@ -48,7 +48,9 @@ struct Cups: View {
         .padding()
         .environmentObject(resultStore)
         .padding(.bottom, 30.0)
+        .navigationBarBackButtonHidden(true)
     }
+
 }
 
 struct DropZoneView: View {

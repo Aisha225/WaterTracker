@@ -11,7 +11,7 @@ struct ContentView: View {
     @EnvironmentObject var user: User
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack(alignment: .leading, spacing: 8) {
                 Image(systemName: "drop.fill")
                     .resizable()

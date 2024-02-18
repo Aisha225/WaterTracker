@@ -14,9 +14,9 @@ class User: ObservableObject {
             saveUserData()
         }
     }
-    @Published var dailyWaterIntakeGoal: Double = 0.0 // الهدف اليومي لاستهلاك الماء باللتر
-    @Published var currentWaterIntake: Double = 0.0 // الاستهلاك الحالي للماء باللتر
-
+    @Published var dailyWaterIntakeGoal: Double = 0
+    @Published var currentWaterIntake: Double = 0
+    
     init(weight: Double) {
         self.weight = weight
         loadUserData() // تحميل البيانات عند إنشاء الكائن

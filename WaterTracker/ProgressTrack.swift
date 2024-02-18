@@ -37,7 +37,6 @@ struct ProgressTrack: View {
     }
 
     var body: some View {
-        NavigationView {
             
             VStack {
                 
@@ -49,7 +48,8 @@ struct ProgressTrack: View {
                 Text("\(String(format: "%.1f", user.currentWaterIntake)) liter / \(String(format: "%.1f", user.dailyWaterIntakeGoal)) liter")
                     .font(.title)
                     .bold()
-                
+                    .foregroundColor(Color("Black1"))
+
                 
                     .foregroundColor(.black)
                     .offset(x: -70, y: 65)
@@ -121,7 +121,6 @@ struct ProgressTrack: View {
                 .offset(y: -75)
                 
             }
-        }.navigationBarBackButtonHidden(true)
     }
 }
 

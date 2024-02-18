@@ -1,23 +1,38 @@
-//
-//  Tapview.swift
-//  WaterTracker
-//
-//  Created by Aisha Alnozili on 08/08/1445 AH.
-//
-
 import SwiftUI
 
 struct Tapview: View {
+    @EnvironmentObject var user: User
+
     var body: some View {
         TabView {
-            ProgressTrack()//.environmentObject(User())
-                        OnboardingPage(title: "Explore", image: "explore_image")
-       ProgressTrack()
-            Cups()
             
-        }
-        .tabViewStyle(PageTabViewStyle())
-        .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+//            Text("page 1")
+//            Text("page 2")
+                 
+                        ProgressTrack()
+                .environmentObject(user)
+//                            .navigationBarTitle("Progress Track")
+                  
+//                    .tabItem {
+//                        Label("Progress", systemImage: "list.dash")
+//                    }
+                    
+                
+                        Cups()
+//                            .navigationBarTitle("Cups")
+                    
+//                    .tabItem {
+//                        Label("Cups", systemImage: "list.dash")
+//                    }
+                }
+        .tabViewStyle(.page)
+       // .indexViewStyle(.page(backgroundDisplayMode: .always))
+
+
+
+
+      //  .tabViewStyle(PageTabViewStyle())
+       // .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
     }
 }
 

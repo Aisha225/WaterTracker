@@ -8,7 +8,7 @@ struct OnboardingScreen02: View {
     @State private var navigateToNotificationPrefs = false // 1. State variable to control navigation
 
     var body: some View {
-        NavigationView {
+//        NavigationView {
 
         VStack(alignment: .leading, spacing: 20) {
             Spacer()
@@ -36,9 +36,9 @@ struct OnboardingScreen02: View {
                             destination: Notification_Preferences_(),
                             isActive: $navigateToNotificationPrefs,
                             label: {
-                                EmptyView() // This is just a placeholder; NavigationLink is activated programmatically
+//                                EmptyView() // This is just a placeholder; NavigationLink is activated programmatically
                             })
-                            .hidden()
+//                            .hidden()
 
                         Button(action: {
                             navigateToNotificationPrefs = true
@@ -56,7 +56,7 @@ struct OnboardingScreen02: View {
         }
         .offset(y: 30)
         .padding()
-    } .navigationBarBackButtonHidden(true)
+ .navigationBarBackButtonHidden(true)
         
         }
 }

@@ -14,7 +14,7 @@ struct Notification_Preferences_: View {
     @State private var navigateToProgressTrack = false
 
     var body: some View {
-        NavigationView{
+//        NavigationView{
             VStack {
                 Text("Notification Preferences")
                     .font(.system(size: 25))
@@ -94,12 +94,14 @@ struct Notification_Preferences_: View {
                 .padding([.leading, .trailing])
                 
                 // Corrected Usage of NavigationLink for Conditional Navigation
-                NavigationLink(destination: ProgressTrack().environmentObject(user), isActive: $navigateToProgressTrack) {
-                    EmptyView()
+                NavigationLink(destination: 
+                                Tapview()                               ,
+                               isActive: $navigateToProgressTrack) {
+//                    EmptyView()
                 }
             }
             .padding()
-        }.navigationBarBackButtonHidden(true)
+.navigationBarBackButtonHidden(true)
     }
 }
 

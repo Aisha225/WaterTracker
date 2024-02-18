@@ -132,10 +132,3 @@ struct ProgressTrack_Previews: PreviewProvider {
     }
 }
 
-
-
-
-
-
-
-

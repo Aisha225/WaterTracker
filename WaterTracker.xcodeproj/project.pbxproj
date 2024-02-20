@@ -28,6 +28,8 @@
 		6838A86E2B8332A300B3CFE2 /* Cups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6838A86D2B8332A300B3CFE2 /* Cups.swift */; };
 		6838A8702B83353100B3CFE2 /* ProgressTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6838A86F2B83353100B3CFE2 /* ProgressTrack.swift */; };
 		6838A8722B83373700B3CFE2 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6838A8712B83373700B3CFE2 /* Model.swift */; };
+		6838A8742B848A0B00B3CFE2 /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6838A8732B848A0B00B3CFE2 /* Splash.swift */; };
+		6838A8762B848BC800B3CFE2 /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6838A8752B848BC800B3CFE2 /* Splash.swift */; };
 		686058302B7CF9C20096E029 /* ProgressTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6860582F2B7CF9C20096E029 /* ProgressTrack.swift */; };
 		68FDE8052B7E13B30016A2B2 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FDE8042B7E13B30016A2B2 /* Track.swift */; };
 		68FDE8072B8112980016A2B2 /* Cups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FDE8062B8112980016A2B2 /* Cups.swift */; };
@@ -97,6 +99,8 @@
 		6838A86D2B8332A300B3CFE2 /* Cups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cups.swift; sourceTree = "<group>"; };
 		6838A86F2B83353100B3CFE2 /* ProgressTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTrack.swift; sourceTree = "<group>"; };
 		6838A8712B83373700B3CFE2 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		6838A8732B848A0B00B3CFE2 /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
+		6838A8752B848BC800B3CFE2 /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
 		6860582F2B7CF9C20096E029 /* ProgressTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTrack.swift; sourceTree = "<group>"; };
 		68FDE8042B7E13B30016A2B2 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		68FDE8062B8112980016A2B2 /* Cups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cups.swift; sourceTree = "<group>"; };
@@ -142,6 +146,7 @@
 				5AE5837D2B7CBE6F002E8B1A /* ContentView.swift */,
 				6838A86D2B8332A300B3CFE2 /* Cups.swift */,
 				6838A86F2B83353100B3CFE2 /* ProgressTrack.swift */,
+				6838A8732B848A0B00B3CFE2 /* Splash.swift */,
 				5A52CAC32B81E9DD0087E6F8 /* InterfaceController.swift */,
 				5AE5837F2B7CBE70002E8B1A /* Assets.xcassets */,
 				5AE583812B7CBE70002E8B1A /* Preview Content */,
@@ -207,6 +212,7 @@
 				5AE5830F2B7BA001002E8B1A /* WaterMetricView.swift */,
 				68FDE8042B7E13B30016A2B2 /* Track.swift */,
 				6860582F2B7CF9C20096E029 /* ProgressTrack.swift */,
+				6838A8752B848BC800B3CFE2 /* Splash.swift */,
 				68FDE8062B8112980016A2B2 /* Cups.swift */,
 				68FDE8262B81E3C20016A2B2 /* Tapview.swift */,
 				5A4DDAF32B7B6A6E00844F0C /* OnboardingScreen02.swift */,
@@ -389,6 +395,7 @@
 			files = (
 				6838A8722B83373700B3CFE2 /* Model.swift in Sources */,
 				5A52CAC42B81E9DD0087E6F8 /* InterfaceController.swift in Sources */,
+				6838A8742B848A0B00B3CFE2 /* Splash.swift in Sources */,
 				5AE5837E2B7CBE6F002E8B1A /* ContentView.swift in Sources */,
 				6838A8702B83353100B3CFE2 /* ProgressTrack.swift in Sources */,
 				5A52CAC82B81FE690087E6F8 /* SplshScreen.swift in Sources */,
@@ -419,6 +426,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AECCF3E2B7E549200A87C23 /* UserFile.swift in Sources */,
+				6838A8762B848BC800B3CFE2 /* Splash.swift in Sources */,
 				68375B6B2B7B53FD00F19D9C /* ContentView.swift in Sources */,
 				68FDE8072B8112980016A2B2 /* Cups.swift in Sources */,
 				68375B692B7B53FD00F19D9C /* WaterTrackerApp.swift in Sources */,

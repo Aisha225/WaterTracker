@@ -8,8 +8,6 @@
 import SwiftUI
 import WatchConnectivity
 
-
-
 struct SwiftUIView: View {
     
    
@@ -23,7 +21,7 @@ struct SwiftUIView: View {
         VStack {
             // to show our emoji
             CircleProgressBar(progress: CGFloat(totalLitersDrank / goalLiters), totalLiters: totalLitersDrank)
-                .frame(width: 120, height: 120) // Adjusted size for Apple Watch
+                .frame(width: 120, height: 120)
                 .padding()
 
           // to show total litter that the user drink it
@@ -34,18 +32,30 @@ struct SwiftUIView: View {
             HStack {
                 Button(action: {
                    
-                    addWater(amount: incrementValue)
+                    subtractWater(amount: incrementValue)
+                
                 }) {
-                    Image(systemName: "plus.circle")
+                    
+                    Image(systemName: "minus")
+                    
+                        .font(.system(size: 25))
+                        .foregroundColor(totalLitersDrank > 0 ? Color.lightblue : Color.gray)
                         .padding()
+                     .buttonStyle(PlainButtonStyle())
+                        
                 }
 
                 Button(action: {
                    
-                    subtractWater(amount: incrementValue)
+                    addWater(amount: incrementValue)
+                
                 }) {
-                    Image(systemName: "minus.circle")
+                    
+                    Image(systemName: "plus")
+                        .font(.system(size: 25))
+                        .foregroundColor(Color.lightblue)
                         .padding()
+                        .buttonStyle(PlainButtonStyle())
                 }
             }
         }
@@ -65,6 +75,16 @@ struct SwiftUIView: View {
                 totalLitersDrank = 0
             }
         }
+    }
+}
+
+struct MyButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .foregroundColor(.blue)
+            .accentColor(.blue)
+            .scaleEffect(configuration.isPressed ? 0.9 : 1.0)
+            .animation(.easeOut(duration: 0.2))
     }
 }
 
@@ -99,7 +119,7 @@ struct CircleProgressBar: View {
             Circle()
                 .trim(from: 0.0, to: min(progress, 1.0))
                 .stroke(style: StrokeStyle(lineWidth: 20.0, lineCap: .round, lineJoin: .round)) // Adjusted line width
-                .foregroundColor(Color.blue)
+                .foregroundColor(Color.lightblue)
                 .rotationEffect(Angle(degrees: 270.0))
                 .overlay(
                     emojiOverlay
@@ -132,10 +152,8 @@ struct CircleProgressBar: View {
     }
 }
 
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         SwiftUIView()
     }
 }
-

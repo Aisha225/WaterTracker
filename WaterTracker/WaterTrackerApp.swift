@@ -15,7 +15,7 @@ struct WaterTrackerApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Splash()
                 .environmentObject(user)
         }
     }

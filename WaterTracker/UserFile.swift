@@ -50,3 +50,22 @@ private extension User {
         currentWaterIntake = UserDefaults.standard.double(forKey: Self.currentWaterIntakeKey)
     }
 }
+extension User {
+    // تحويل الهدف اليومي والاستهلاك الحالي إلى أكواب
+    var dailyWaterIntakeGoalCups: Int {
+        Int(dailyWaterIntakeGoal / 0.24) // افتراض أن 1 كوب = 0.24 لتر
+    }
+    
+    var currentWaterIntakeCups: Int {
+        Int(currentWaterIntake / 0.24)
+    }
+    
+    // طرق لإضافة أو إزالة كوب من الاستهلاك
+    func addCup() {
+        addWaterIntake(amount: 0.24) // إضافة كوب
+    }
+    
+    func removeCup() {
+        addWaterIntake(amount: -0.24) // إزالة كوب
+    }
+}

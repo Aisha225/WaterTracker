@@ -50,8 +50,6 @@ struct ProgressTrack: View {
                     .bold()
                     .foregroundColor(Color("Black1"))
 
-                
-                    .foregroundColor(.black)
                     .offset(x: -70, y: 65)
                     .padding(.leading)
                 

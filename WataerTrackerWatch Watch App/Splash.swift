@@ -4,12 +4,13 @@ struct Splash: View {
     @State private var offset: CGFloat = -30
     @State private var opacity: Double = 1.0
     @State private var timer: Timer?
-    @State private var showContentView = false // New state to control transition
+    @State private var showContentView = false
     
     var body: some View {
-        // Conditional view rendering based on showContentView state
+        
+        
         if showContentView {
-            Cups() // Transition to ContentView
+            Cups()
         } else {
             ZStack {
                 Color("white1")
@@ -29,7 +30,7 @@ struct Splash: View {
                                 }
                                 opacity -= 0.1
                                 if opacity <= 0 {
-                                    showContentView = true // Update to trigger transition
+                                    showContentView = true 
                                     timer?.invalidate()
                                 }
                             }

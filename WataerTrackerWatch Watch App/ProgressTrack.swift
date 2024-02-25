@@ -19,45 +19,44 @@ struct SwiftUIView: View {
 
     var body: some View {
         VStack {
+            
             // to show our emoji
             CircleProgressBar(progress: CGFloat(totalLitersDrank / goalLiters), totalLiters: totalLitersDrank)
                 .frame(width: 120, height: 120)
                 .padding()
 
           // to show total litter that the user drink it
-            Text(String(format: "%.2f / %.2f Liters", totalLitersDrank, goalLiters))
-                .font(.caption)
+//           Text(String(format: "%.2f / %.2f Liters", totalLitersDrank, goalLiters))
+//                .font(.caption)
 
           
-            HStack {
-                Button(action: {
-                   
-                    subtractWater(amount: incrementValue)
-                
-                }) {
-                    
-                    Image(systemName: "minus")
-                    
-                        .font(.system(size: 25))
-                        .foregroundColor(totalLitersDrank > 0 ? Color.lightblue : Color.gray)
-                        .padding()
-                     .buttonStyle(PlainButtonStyle())
-                        
-                }
+            HStack(spacing: 20) {
+            Button(action: {
+            subtractWater(amount: incrementValue)
 
-                Button(action: {
-                   
-                    addWater(amount: incrementValue)
-                
-                }) {
+                        }) {
+                            Image(systemName: "minus")
+                                .fontWeight(.heavy)
+                                .foregroundColor(Color("lightblue"))
+                                .font(.system(size: 15))
+                        }
+                      
+                        
+                        Text(String(format: "%.1f", totalLitersDrank))
+                            .fontWeight(.semibold)
+                        
                     
-                    Image(systemName: "plus")
-                        .font(.system(size: 25))
-                        .foregroundColor(Color.lightblue)
-                        .padding()
-                        .buttonStyle(PlainButtonStyle())
-                }
-            }
+                        Button(action: {
+                            addWater(amount: incrementValue)
+                        }) {
+                            Image(systemName: "plus")
+                                .frame(width: 10, height: 10)
+                                .fontWeight(.heavy)
+                                .foregroundColor(Color("lightblue"))
+                                .font(.system(size: 15))
+                             
+                        }
+                    }
         }
         .padding()
     }
@@ -85,6 +84,7 @@ struct MyButtonStyle: ButtonStyle {
             .accentColor(.blue)
             .scaleEffect(configuration.isPressed ? 0.9 : 1.0)
             .animation(.easeOut(duration: 0.2))
+        
     }
 }
 

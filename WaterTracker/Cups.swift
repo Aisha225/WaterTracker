@@ -8,13 +8,13 @@ struct Cups: View {
         VStack {
             Text("Today's Water Intake")
                 .foregroundColor(Color("grey2"))
-                .offset(x: -90, y: 50)
+                .offset(x: -90, y: 20)
                 .padding(.leading)
             Text("\(user.currentWaterIntakeCups) cups / \(user.dailyWaterIntakeGoalCups) cups")
                 .font(.title)
                 .bold()
                 .foregroundColor(Color("Black1"))
-                .offset(x: -70, y: 50)
+                .offset(x: -70, y: 20)
                 .padding(.leading)
 
             ForEach(0..<5) { row in
@@ -26,7 +26,7 @@ struct Cups: View {
             }
             .padding()
             .padding(.bottom, 30.0)
-            .offset(y: 65)
+            .offset(y: 20)
             .navigationBarBackButtonHidden(true)
         }
         .onAppear {
@@ -63,9 +63,12 @@ struct Cups: View {
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 40, height: 40)
                 }
+            
                 Text("1 cup")
                     .font(.caption)
-                    .foregroundColor(.gray)
+                    .foregroundColor(Color("grey2"))
+                    .offset( y: 10)
+
             }
         }
     }

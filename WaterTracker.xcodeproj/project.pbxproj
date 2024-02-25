@@ -30,7 +30,6 @@
 		6838A8742B848A0B00B3CFE2 /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6838A8732B848A0B00B3CFE2 /* Splash.swift */; };
 		6838A8762B848BC800B3CFE2 /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6838A8752B848BC800B3CFE2 /* Splash.swift */; };
 		686058302B7CF9C20096E029 /* ProgressTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6860582F2B7CF9C20096E029 /* ProgressTrack.swift */; };
-		68FDE8052B7E13B30016A2B2 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FDE8042B7E13B30016A2B2 /* Track.swift */; };
 		68FDE8072B8112980016A2B2 /* Cups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FDE8062B8112980016A2B2 /* Cups.swift */; };
 		68FDE8272B81E3C20016A2B2 /* Tapview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FDE8262B81E3C20016A2B2 /* Tapview.swift */; };
 /* End PBXBuildFile section */
@@ -100,7 +99,6 @@
 		6838A8732B848A0B00B3CFE2 /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
 		6838A8752B848BC800B3CFE2 /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
 		6860582F2B7CF9C20096E029 /* ProgressTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTrack.swift; sourceTree = "<group>"; };
-		68FDE8042B7E13B30016A2B2 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		68FDE8062B8112980016A2B2 /* Cups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cups.swift; sourceTree = "<group>"; };
 		68FDE8262B81E3C20016A2B2 /* Tapview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tapview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -207,7 +205,6 @@
 				68375B682B7B53FD00F19D9C /* WaterTrackerApp.swift */,
 				68375B6A2B7B53FD00F19D9C /* ContentView.swift */,
 				5AE5830F2B7BA001002E8B1A /* WaterMetricView.swift */,
-				68FDE8042B7E13B30016A2B2 /* Track.swift */,
 				6860582F2B7CF9C20096E029 /* ProgressTrack.swift */,
 				6838A8752B848BC800B3CFE2 /* Splash.swift */,
 				68FDE8062B8112980016A2B2 /* Cups.swift */,
@@ -431,7 +428,6 @@
 				5A4DDAF42B7B6A6E00844F0C /* OnboardingScreen02.swift in Sources */,
 				5AE583102B7BA001002E8B1A /* WaterMetricView.swift in Sources */,
 				68FDE8272B81E3C20016A2B2 /* Tapview.swift in Sources */,
-				68FDE8052B7E13B30016A2B2 /* Track.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
